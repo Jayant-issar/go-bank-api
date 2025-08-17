@@ -18,7 +18,6 @@ packages:
     emit_pointers_for_null_types: false
     emit_enum_valid_method: false
     emit_all_enum_values: false
-    build_tags: "some_tag"
     json_tags_case_style: "camel"
     omit_unused_structs: false
     output_batch_file_name: "batch.go"
