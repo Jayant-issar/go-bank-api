@@ -9,19 +9,19 @@ import (
 )
 
 type Account struct {
-	ID        int64       `json:"id"`
-	Owner     string      `json:"owner"`
-	Balance   int64       `json:"balance"`
-	Currency  string      `json:"currency"`
-	CreatedAt interface{} `json:"createdAt"`
+	ID        int64        `json:"id"`
+	Owner     string       `json:"owner"`
+	Balance   int64        `json:"balance"`
+	Currency  string       `json:"currency"`
+	CreatedAt sql.NullTime `json:"createdAt"`
 }
 
 type Entry struct {
 	ID        int64         `json:"id"`
 	AccountID sql.NullInt64 `json:"accountId"`
 	// it can be negative or positive
-	Ammount   int64       `json:"ammount"`
-	CreatedAt interface{} `json:"createdAt"`
+	Amount    int64        `json:"amount"`
+	CreatedAt sql.NullTime `json:"createdAt"`
 }
 
 type Transfer struct {
@@ -29,5 +29,5 @@ type Transfer struct {
 	FromAccountID sql.NullInt64 `json:"fromAccountId"`
 	ToAccountID   sql.NullInt64 `json:"toAccountId"`
 	Amount        int64         `json:"amount"`
-	CreatedAt     interface{}   `json:"createdAt"`
+	CreatedAt     sql.NullTime  `json:"createdAt"`
 }
